@@ -1,0 +1,240 @@
+//MIXINS
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: $direction;
+}
+
+//VARIABLES
+
+$desaturatedRed: hsl(0, 36%, 70%);
+$softRed: hsl(0, 93%, 68%);
+$darkGrayishRed: hsl(0, 6%, 24%);
+$gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+//OVERALL
+html {
+  @include flexCenter(column);
+  justify-content: space-evenly;
+  height: 100vh;
+}
+body {
+  @include flexCenter(column);
+  justify-content: space-around;
+  height: 800px;
+  min-height: 800px;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $desaturatedRed;
+  background: $gradient1;
+}
+
+// HEADER
+
+header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 375px;
+  height: 100px;
+  text-align: left;
+  img {
+    width: 100px;
+    margin-left: 25px;
+  }
+}
+
+// MAIN
+
+main {
+  width: 375px;
+  height: 750px;
+  .info {
+    @include flexCenter(column);
+    height: 380px;
+    justify-content: space-between;
+    h1 {
+      font-size: 45px;
+      padding-top: 30px;
+      letter-spacing: 10px;
+      color: $darkGrayishRed;
+      width: 75%;
+      margin-bottom: 0;
+      span {
+        color: $desaturatedRed;
+        font-weight: 300;
+      }
+    }
+    p {
+      padding: 0 18px;
+      margin: 0;
+      line-height: 1.5;
+    }
+    form {
+      width: 300px;
+      position: relative;
+      text-align: center;
+      input {
+        width: 270px;
+        border-radius: 50px;
+        padding: 15px;
+        border: 0.5px solid $desaturatedRed;
+        background: $gradient1;
+        &::placeholder {
+          color: $desaturatedRed;
+          opacity: 70%;
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 14px;
+          padding-left: 10px;
+          font-weight: 300;
+        }
+        &:focus {
+          border: 0.5px solid $desaturatedRed;
+          outline: none;
+        }
+      }
+      button {
+        position: absolute;
+        width: 70px;
+        border-radius: 25px;
+        padding: 13px;
+        top: 0px;
+        right: -4px;
+        background: $gradient2;
+        border: none;
+        cursor: pointer;
+        &:hover {
+          background: hsl(0, 80%, 86%);
+          box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.24);
+        }
+      }
+      .icon-error {
+        position: absolute;
+        right: 75px;
+        top: 11px;
+      }
+    }
+  }
+  .error {
+    text-align: left;
+    color: $softRed;
+    font-size: 13px;
+    opacity: 75%;
+    padding-left: 60px;
+    margin-top: 6px;
+  }
+}
+
+// FOOTER
+
+footer {
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    color: $darkGrayishRed;
+    opacity: 80%;
+    a {
+      color: $desaturatedRed;
+      &:hover {
+        color: $softRed;
+      }
+    }
+  }
+}
+
+// JS
+
+.hidden {
+  visibility: hidden;
+}
+
+//Media Queries
+
+@media screen and (min-width: 1440px) {
+  body {
+    width: 60vw;
+    margin-right: auto;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    height: 800px;
+    overflow: hidden;
+  }
+
+  header {
+    margin-left: -150px;
+    margin-top: 70px;
+    img {
+      width: 200px;
+      margin-left: 0;
+    }
+  }
+  main {
+    width: 864px;
+    position: relative;
+    @include flexCenter(column);
+    .main-image {
+      position: absolute;
+      width: 620px;
+      right: -580px;
+      top: -155px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .info {
+      text-align: left;
+      width: 540px;
+      height: 525px;
+      h1 {
+        width: 95%;
+        font-size: 75px;
+        letter-spacing: 12px;
+      }
+      form {
+        width: 90%;
+        input {
+          width: 90%;
+          margin-left: -20px;
+          padding: 25px;
+          font-size: 16px;
+          &::placeholder {
+            font-size: 17px;
+          }
+        }
+        button {
+          width: 110px;
+          right: 7px;
+          top: 0px;
+          padding: 23px;
+          border-radius: 32px;
+        }
+        .icon-error {
+          position: absolute;
+          right: 135px;
+          top: 19px;
+          height: 30px;
+        }
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .error {
+      font-size: 16px;
+      opacity: 100%;
+      margin-left: -320px;
+      padding-top: 7px;
+    }
+  }
+  footer {
+    margin-left: -35px;
+    .attribution {
+      font-size: 14px;
+    }
+  }
+}

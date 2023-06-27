@@ -1,0 +1,235 @@
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 800px;
+  min-height: 800px;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: hsl(0, 36%, 70%);
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 375px;
+  height: 100px;
+  text-align: left;
+}
+header img {
+  width: 100px;
+  margin-left: 25px;
+}
+
+main {
+  width: 375px;
+  height: 750px;
+}
+main .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  height: 380px;
+  justify-content: space-between;
+}
+main .info h1 {
+  font-size: 45px;
+  padding-top: 30px;
+  letter-spacing: 10px;
+  color: hsl(0, 6%, 24%);
+  width: 75%;
+  margin-bottom: 0;
+}
+main .info h1 span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 300;
+}
+main .info p {
+  padding: 0 18px;
+  margin: 0;
+  line-height: 1.5;
+}
+main .info form {
+  width: 300px;
+  position: relative;
+  text-align: center;
+}
+main .info form input {
+  width: 270px;
+  border-radius: 50px;
+  padding: 15px;
+  border: 0.5px solid hsl(0, 36%, 70%);
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+main .info form input::-moz-placeholder {
+  color: hsl(0, 36%, 70%);
+  opacity: 70%;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  padding-left: 10px;
+  font-weight: 300;
+}
+main .info form input::placeholder {
+  color: hsl(0, 36%, 70%);
+  opacity: 70%;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  padding-left: 10px;
+  font-weight: 300;
+}
+main .info form input:focus {
+  border: 0.5px solid hsl(0, 36%, 70%);
+  outline: none;
+}
+main .info form button {
+  position: absolute;
+  width: 70px;
+  border-radius: 25px;
+  padding: 13px;
+  top: 0px;
+  right: -4px;
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border: none;
+  cursor: pointer;
+}
+main .info form button:hover {
+  background: hsl(0, 80%, 86%);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.24);
+}
+main .info form .icon-error {
+  position: absolute;
+  right: 75px;
+  top: 11px;
+}
+main .error {
+  text-align: left;
+  color: hsl(0, 93%, 68%);
+  font-size: 13px;
+  opacity: 75%;
+  padding-left: 60px;
+  margin-top: 6px;
+}
+
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  color: hsl(0, 6%, 24%);
+  opacity: 80%;
+}
+footer .attribution a {
+  color: hsl(0, 36%, 70%);
+}
+footer .attribution a:hover {
+  color: hsl(0, 93%, 68%);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    width: 60vw;
+    margin-right: auto;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    height: 800px;
+    overflow: hidden;
+  }
+  header {
+    margin-left: -150px;
+    margin-top: 70px;
+  }
+  header img {
+    width: 200px;
+    margin-left: 0;
+  }
+  main {
+    width: 864px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  main .main-image {
+    position: absolute;
+    width: 620px;
+    right: -580px;
+    top: -155px;
+    margin: 0;
+    padding: 0;
+  }
+  main .info {
+    text-align: left;
+    width: 540px;
+    height: 525px;
+  }
+  main .info h1 {
+    width: 95%;
+    font-size: 75px;
+    letter-spacing: 12px;
+  }
+  main .info form {
+    width: 90%;
+  }
+  main .info form input {
+    width: 90%;
+    margin-left: -20px;
+    padding: 25px;
+    font-size: 16px;
+  }
+  main .info form input::-moz-placeholder {
+    font-size: 17px;
+  }
+  main .info form input::placeholder {
+    font-size: 17px;
+  }
+  main .info form button {
+    width: 110px;
+    right: 7px;
+    top: 0px;
+    padding: 23px;
+    border-radius: 32px;
+  }
+  main .info form .icon-error {
+    position: absolute;
+    right: 135px;
+    top: 19px;
+    height: 30px;
+  }
+  main .info p {
+    font-size: 18px;
+  }
+  main .error {
+    font-size: 16px;
+    opacity: 100%;
+    margin-left: -320px;
+    padding-top: 7px;
+  }
+  footer {
+    margin-left: -35px;
+  }
+  footer .attribution {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=style.css.map */
