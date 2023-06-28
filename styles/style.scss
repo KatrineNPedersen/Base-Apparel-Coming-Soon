@@ -21,8 +21,9 @@ html {
   @include flexCenter(column);
   justify-content: space-evenly;
   height: 100vh;
+  background: hsl(0, 100%, 98%);
 }
-body {
+.container {
   @include flexCenter(column);
   justify-content: space-around;
   height: 800px;
@@ -111,7 +112,7 @@ main {
         cursor: pointer;
         &:hover {
           background: hsl(0, 80%, 86%);
-          box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.24);
+          box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.15);
         }
       }
       .icon-error {
@@ -154,87 +155,163 @@ footer {
   visibility: hidden;
 }
 
+.removed {
+  display: none;
+}
+
 //Media Queries
 
 @media screen and (min-width: 1440px) {
-  body {
-    width: 60vw;
-    margin-right: auto;
-    background-image: url("/images/bg-pattern-desktop.svg");
+  .container {
+    box-sizing: border-box;
+    width: 1440px;
+    background: url("/images/bg-pattern-desktop.svg") no-repeat;
     height: 800px;
+    max-width: 1440px;
+    justify-content: center;
+    justify-content: space-between;
     overflow: hidden;
   }
-
   header {
-    margin-left: -150px;
-    margin-top: 70px;
+    align-self: flex-start;
+    height: 20%;
+    padding: 0 10%;
     img {
-      width: 200px;
-      margin-left: 0;
+      width: 150px;
     }
   }
-  main {
-    width: 864px;
-    position: relative;
-    @include flexCenter(column);
-    .main-image {
-      position: absolute;
-      width: 620px;
-      right: -580px;
-      top: -155px;
-      margin: 0;
-      padding: 0;
-    }
 
+  main {
+    display: flex;
+    width: 1440px;
+    height: 600px;
+    .laptop-image {
+      height: 135%;
+      margin-top: -165px;
+      margin-left: 220px;
+    }
     .info {
+      width: 700px;
       text-align: left;
-      width: 540px;
-      height: 525px;
+      height: 82%;
+      padding-left: 144px;
       h1 {
-        width: 95%;
-        font-size: 75px;
-        letter-spacing: 12px;
+        width: 90%;
+        font-size: 70px;
+        margin-top: 50px;
+        margin-bottom: 15px;
+      }
+      .description {
+        padding-right: 0;
+        padding-bottom: 30px;
       }
       form {
-        width: 90%;
+        width: 100%;
         input {
-          width: 90%;
-          margin-left: -20px;
-          padding: 25px;
-          font-size: 16px;
-          &::placeholder {
-            font-size: 17px;
-          }
+          width: 85%;
+          padding: 20px;
         }
         button {
-          width: 110px;
-          right: 7px;
-          top: 0px;
-          padding: 23px;
-          border-radius: 32px;
+          margin-right: 16px;
+          padding: 18px 25px;
+          width: 95px;
+          box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.15);
+          border-radius: 30px;
         }
         .icon-error {
           position: absolute;
-          right: 135px;
-          top: 19px;
-          height: 30px;
+          right: 120px;
+          top: 16px;
         }
-      }
-      p {
-        font-size: 18px;
       }
     }
     .error {
-      font-size: 16px;
-      opacity: 100%;
-      margin-left: -320px;
-      padding-top: 7px;
+      opacity: 90%;
+      height: 10px;
+      align-self: flex-start;
+      width: 200px;
+      text-align: center;
     }
   }
+
   footer {
-    margin-left: -35px;
-    .attribution {
-      font-size: 14px;
-    }
+    width: 1010px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
   }
+
+  //   header {
+  //     margin-left: -150px;
+  //     margin-top: 70px;
+  //     img {
+  //       width: 200px;
+  //       margin-left: 0;
+  //     }
+  //   }
+  //   main {
+  //     width: 864px;
+  //     position: relative;
+  //     @include flexCenter(column);
+  //     .main-image {
+  //       position: absolute;
+  //       width: 620px;
+  //       right: -580px;
+  //       top: -155px;
+  //       margin: 0;
+  //       padding: 0;
+  //     }
+
+  //     .info {
+  //       text-align: left;
+  //       width: 540px;
+  //       height: 525px;
+  //       h1 {
+  //         width: 95%;
+  //         font-size: 75px;
+  //         letter-spacing: 12px;
+  //       }
+  //       form {
+  //         width: 90%;
+  //         input {
+  //           width: 90%;
+  //           margin-left: -20px;
+  //           padding: 25px;
+  //           font-size: 16px;
+  //           &::placeholder {
+  //             font-size: 17px;
+  //           }
+  //         }
+  //         button {
+  //           width: 110px;
+  //           right: 7px;
+  //           top: 0px;
+  //           padding: 23px;
+  //           border-radius: 32px;
+  //         }
+  //         .icon-error {
+  //           position: absolute;
+  //           right: 135px;
+  //           top: 19px;
+  //           height: 30px;
+  //         }
+  //       }
+  //       p {
+  //         font-size: 18px;
+  //       }
+  //     }
+  //     .error {
+  //       font-size: 16px;
+  //       opacity: 100%;
+  //       margin-left: -320px;
+  //       padding-top: 7px;
+  //     }
+  //   }
+  //   footer {
+  //     margin-left: -35px;
+  //     .attribution {
+  //       font-size: 14px;
+  //     }
+  //   }
 }

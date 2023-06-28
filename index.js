@@ -4,7 +4,8 @@ const emailInput = document.querySelector("input[name='emails']");
 const iconError = document.querySelector(".icon-error");
 const textError = document.querySelector(".error");
 let w = document.documentElement.clientWidth || window.innerWidth;
-const mainImage = document.querySelector(".main-image");
+const mobileImage = document.querySelector(".mobile-image");
+const laptopImage = document.querySelector(".laptop-image");
 
 function checkValidity() {
   emailInput.addEventListener("invalid", function (event) {
@@ -35,9 +36,11 @@ tryAgain();
 
 function resizePage(w) {
   if (w < 1440) {
-    console.log("mobile");
+    laptopImage.classList.add("removed");
+    mobileImage.classList.remove("removed");
   } else {
-    mainImage.src = "images/hero-desktop.jpg";
+    laptopImage.classList.remove("removed");
+    mobileImage.classList.add("removed");
   }
 }
 resizePage(w);
