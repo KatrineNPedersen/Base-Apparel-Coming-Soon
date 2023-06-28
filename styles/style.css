@@ -6,7 +6,7 @@ html {
   flex-direction: column;
   justify-content: space-evenly;
   height: 100vh;
-  background: hsl(0, 100%, 98%);
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 }
 
 .container {
@@ -152,10 +152,13 @@ footer .attribution a:hover {
 }
 
 @media screen and (min-width: 1440px) {
+  html {
+    background: hsl(0, 100%, 98%);
+  }
   .container {
     box-sizing: border-box;
     width: 1440px;
-    background: url("/images/bg-pattern-desktop.svg") no-repeat;
+    background: url("images/bg-pattern-desktop.svg") no-repeat;
     height: 800px;
     max-width: 1440px;
     justify-content: center;
