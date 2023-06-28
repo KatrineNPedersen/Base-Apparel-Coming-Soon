@@ -158,7 +158,7 @@ footer .attribution a:hover {
   .container {
     box-sizing: border-box;
     width: 1440px;
-    background: url("images/bg-pattern-desktop.svg") no-repeat;
+    background: url("../images/bg-pattern-desktop.svg") no-repeat;
     height: 800px;
     max-width: 1440px;
     justify-content: center;

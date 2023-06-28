@@ -7,6 +7,21 @@ let w = document.documentElement.clientWidth || window.innerWidth;
 const mobileImage = document.querySelector(".mobile-image");
 const laptopImage = document.querySelector(".laptop-image");
 
+function resizePage(w) {
+  if (w < 1440) {
+    laptopImage.classList.add("removed");
+    mobileImage.classList.remove("removed");
+  } else {
+    laptopImage.classList.remove("removed");
+    mobileImage.classList.add("removed");
+  }
+}
+resizePage(w);
+
+window.onresize = function () {
+  location.reload();
+};
+
 function checkValidity() {
   emailInput.addEventListener("invalid", function (event) {
     event.preventDefault();
@@ -33,18 +48,3 @@ function tryAgain() {
   });
 }
 tryAgain();
-
-function resizePage(w) {
-  if (w < 1440) {
-    laptopImage.classList.add("removed");
-    mobileImage.classList.remove("removed");
-  } else {
-    laptopImage.classList.remove("removed");
-    mobileImage.classList.add("removed");
-  }
-}
-resizePage(w);
-
-window.onresize = function () {
-  location.reload();
-};
